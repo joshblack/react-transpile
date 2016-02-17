@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import { transform } from 'babel-standalone';
 
-// Custom `eval` function that servers as the default program executor
+// Custom `eval` function that serves as the default program executor
 const evalify = (code, scope) => {
   'use strict';
 
