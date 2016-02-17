@@ -35,7 +35,7 @@ const evalify = (code, scope) => {
  *   scope={{ ScopedModule: Module }}
  *   source={sourceString}
  *   onError={(error) => {}}
- *   onTranspile={(result) => {})
+ *   onResult={(result) => {})
  *   baseElement={() => <p>Transpiling...</p>}
  * />
  */
@@ -48,7 +48,7 @@ export default class Transpile extends React.Component {
     onError: PropTypes.func,
 
     // Calback called with the result of transpiling the source
-    onTranspile: PropTypes.func,
+    onResult: PropTypes.func,
 
     // Component that is displayed while transpiling
     baseComponent:  PropTypes.func,
@@ -98,7 +98,7 @@ export default class Transpile extends React.Component {
     }
 
     if (result) {
-      return this.props.onTranspile(result);
+      return this.props.onResult(result);
     }
 
     return this.props.baseComponent && this.props.baseComponent();
@@ -125,7 +125,7 @@ export default class Transpile extends React.Component {
 
       this.setState({
         error: null,
-        result: customEval(code, source)
+        result: customEval(code, scope)
       });
     } catch (error) {
       this.setState({ error });
