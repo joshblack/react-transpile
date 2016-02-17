@@ -1,6 +1,6 @@
 {
   "name": "react-transpile",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A React Component for transpiling ES2015+ JS.",
   "main": "lib/index.js",
   "scripts": {
